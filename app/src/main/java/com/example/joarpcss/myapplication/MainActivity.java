@@ -24,20 +24,23 @@ public class MainActivity extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.btnLogin);
         TextView show = (TextView) findViewById(R.id.txtShow);
         TextView signup = (TextView) findViewById(R.id.txtSignUp);
+        final EditText emailAdd = (EditText) findViewById(R.id.etxtEmailAdd);
+        final EditText pword = (EditText) findViewById(R.id.etxtPword);
+
+        emailAdd.requestFocus();
 
 
         final DatabaseAdapter sqlDB = new DatabaseAdapter(getApplicationContext());
 
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                EditText emailAdd = (EditText) findViewById(R.id.etxtEmailAdd);
-                EditText pword = (EditText) findViewById(R.id.etxtPword);
+
 
                 //if (checkLogin(emailAdd.getText().toString(), pword.getText().toString()) == true) {
                 if (sqlDB.validateUserFromEmail(emailAdd.getText().toString(), pword.getText().toString()) == true
                         || sqlDB.validateUserFromUName(emailAdd.getText().toString(), pword.getText().toString()) == true) {
                     //Toast.makeText(getApplicationContext(), "Connecting...", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, UserAccountActivity.class);
+                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                     startActivity(intent);
 
                 } else {

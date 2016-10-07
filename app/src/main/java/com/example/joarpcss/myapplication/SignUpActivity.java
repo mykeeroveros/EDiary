@@ -30,7 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
         final EditText firstname = (EditText) findViewById(R.id.eTxtFname);
         final EditText lastname = (EditText) findViewById(R.id.eTextLname);
         Button btnRegister = (Button) findViewById(R.id.btnRegister);
-
+        firstname.requestFocus();
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +75,8 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     public String getDateTime() {
@@ -116,5 +118,6 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
     }
+
 
 }
