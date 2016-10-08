@@ -51,6 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Account created successfully", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                         startActivity(intent);
+                                        finish();
                                     } else {
                                         Toast.makeText(getApplicationContext(), "Password did not match", Toast.LENGTH_SHORT).show();
                                     }
@@ -120,4 +121,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

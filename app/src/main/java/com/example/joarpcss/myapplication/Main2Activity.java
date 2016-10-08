@@ -25,4 +25,10 @@ public class Main2Activity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected  void onPause(){
+        super.onPause();
+        finish();
+    }
+
 }

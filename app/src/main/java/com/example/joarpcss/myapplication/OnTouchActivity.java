@@ -1,5 +1,6 @@
 package com.example.joarpcss.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -72,5 +73,12 @@ public class OnTouchActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(OnTouchActivity.this, Main2Activity.class);
+        startActivity(intent);
+        finish();
+    }
+
 
 }
